@@ -1,0 +1,11 @@
+set -a
+LSF_BINDIR=/glb/apps/hpc/lsfprod/10.1/linux2.6-glibc2.3-x86_64/bin
+LSF_CLUSTER=AMSGDC
+LSF_ENVDIR=/glb/apps/hpc/lsfprod/conf
+LSF_INSTALL=/glb/apps/hpc/lsfprod/10.1/install
+LSF_LIBDIR=/glb/apps/hpc/lsfprod/10.1/linux2.6-glibc2.3-x86_64/lib
+LSF_PROFILE=/glb/apps/hpc/lsfprod/conf/profile.lsf
+LSF_SERVERDIR=/glb/apps/hpc/lsfprod/10.1/linux2.6-glibc2.3-x86_64/etc
+LSF_TOP=/glb/apps/hpc/lsfprod
+LSF_VERSION=10.1.0.6
+set +a

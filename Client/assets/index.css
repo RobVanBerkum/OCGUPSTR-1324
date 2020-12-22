@@ -1,0 +1,97 @@
+/** Styling for general aspects of the app. */
+
+body {
+	background-color: #fcfcfc;
+	overflow-y: scroll;
+}
+
+a:hover {
+	cursor: pointer;
+}
+
+p {
+	word-break: break-word;
+}
+
+code {
+	display: block;
+	font-size: 12px;
+}
+
+#loading {
+	position: fixed;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	font-size: 20px;
+}
+
+
+/** Styling for login component. */
+
+#row-login {
+	padding-top: 100px;
+}
+
+
+/** Styling for tasks table component. */
+
+#table-tasks {
+	padding: 0px;
+}
+
+#table-tasks table {
+	border: none;
+}
+
+
+/** Styling for form components overriding semantic defaults, 
+    in particular to make readonly more clear. */
+
+form.readonly textarea, 
+form.readonly input, 
+form.readonly input~label::before {
+	/** Enable to grey out background of readonly fields. */
+	/** background-color: #fbfbfb !important; */  
+}
+
+form.readonly label:hover, 
+form.readonly input:focus~label {
+	color: rgba(0,0,0,.87) !important;
+}
+
+form.readonly textarea:focus, 
+form.readonly textarea:active, 
+form.readonly textarea:hover, 
+form.readonly input:focus,  
+form.readonly input:active,  
+form.readonly input:hover,
+form.readonly input~label::before, 
+form.readonly input~label:focus::before,
+form.readonly input~label:active::before,
+form.readonly input~label:hover::before {
+	border: 1px solid rgba(34,36,38,.15) !important;
+}
+
+form.readonly .ui.checkbox input.hidden+label {
+	cursor: default;
+}
+
+
+/** Styling for flip animation. */
+i.flip {
+	animation: flip 3s infinite
+}
+td > i.flip {
+	animation: none;
+} 
+
+@keyframes flip {
+	0% { transform: rotate(0deg); }
+	20% { transform: rotate(180deg); }
+	50% { transform: rotate(180deg); }
+	70% { transform: rotate(360deg); }
+	100% { transform: rotate(360deg); }
+}
+
+

@@ -1,0 +1,6 @@
+#	Specify files ignored by perforce
+#   Use this command to set:
+#   p4 set P4IGNORE=p4.ignore
+
+node_modules
+dist

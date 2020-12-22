@@ -1,0 +1,10 @@
+{
+  "compilerOptions": {
+    "noImplicitAny": true,
+    "target": "es5",
+    "module": "commonjs",
+    "sourceMap": true,
+    "lib": ["es6", "dom"],
+    "jsx": "react"
+  }
+}

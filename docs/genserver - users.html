@@ -1,0 +1,591 @@
+<!DOCTYPE html><html><head>
+      <title>Genserver - Users</title>
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      
+      <link rel="stylesheet" href="file:///c:\Users\robb\.vscode\extensions\shd101wyy.markdown-preview-enhanced-0.5.13\node_modules\@shd101wyy\mume\dependencies\katex\katex.min.css">
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      <style>
+      /**
+ * prism.js Github theme based on GitHub's theme.
+ * @author Sam Clarke
+ */
+code[class*="language-"],
+pre[class*="language-"] {
+  color: #333;
+  background: none;
+  font-family: Consolas, "Liberation Mono", Menlo, Courier, monospace;
+  text-align: left;
+  white-space: pre;
+  word-spacing: normal;
+  word-break: normal;
+  word-wrap: normal;
+  line-height: 1.4;
+
+  -moz-tab-size: 8;
+  -o-tab-size: 8;
+  tab-size: 8;
+
+  -webkit-hyphens: none;
+  -moz-hyphens: none;
+  -ms-hyphens: none;
+  hyphens: none;
+}
+
+/* Code blocks */
+pre[class*="language-"] {
+  padding: .8em;
+  overflow: auto;
+  /* border: 1px solid #ddd; */
+  border-radius: 3px;
+  /* background: #fff; */
+  background: #f5f5f5;
+}
+
+/* Inline code */
+:not(pre) > code[class*="language-"] {
+  padding: .1em;
+  border-radius: .3em;
+  white-space: normal;
+  background: #f5f5f5;
+}
+
+.token.comment,
+.token.blockquote {
+  color: #969896;
+}
+
+.token.cdata {
+  color: #183691;
+}
+
+.token.doctype,
+.token.punctuation,
+.token.variable,
+.token.macro.property {
+  color: #333;
+}
+
+.token.operator,
+.token.important,
+.token.keyword,
+.token.rule,
+.token.builtin {
+  color: #a71d5d;
+}
+
+.token.string,
+.token.url,
+.token.regex,
+.token.attr-value {
+  color: #183691;
+}
+
+.token.property,
+.token.number,
+.token.boolean,
+.token.entity,
+.token.atrule,
+.token.constant,
+.token.symbol,
+.token.command,
+.token.code {
+  color: #0086b3;
+}
+
+.token.tag,
+.token.selector,
+.token.prolog {
+  color: #63a35c;
+}
+
+.token.function,
+.token.namespace,
+.token.pseudo-element,
+.token.class,
+.token.class-name,
+.token.pseudo-class,
+.token.id,
+.token.url-reference .token.variable,
+.token.attr-name {
+  color: #795da3;
+}
+
+.token.entity {
+  cursor: help;
+}
+
+.token.title,
+.token.title .token.punctuation {
+  font-weight: bold;
+  color: #1d3e81;
+}
+
+.token.list {
+  color: #ed6a43;
+}
+
+.token.inserted {
+  background-color: #eaffea;
+  color: #55a532;
+}
+
+.token.deleted {
+  background-color: #ffecec;
+  color: #bd2c00;
+}
+
+.token.bold {
+  font-weight: bold;
+}
+
+.token.italic {
+  font-style: italic;
+}
+
+
+/* JSON */
+.language-json .token.property {
+  color: #183691;
+}
+
+.language-markup .token.tag .token.punctuation {
+  color: #333;
+}
+
+/* CSS */
+code.language-css,
+.language-css .token.function {
+  color: #0086b3;
+}
+
+/* YAML */
+.language-yaml .token.atrule {
+  color: #63a35c;
+}
+
+code.language-yaml {
+  color: #183691;
+}
+
+/* Ruby */
+.language-ruby .token.function {
+  color: #333;
+}
+
+/* Markdown */
+.language-markdown .token.url {
+  color: #795da3;
+}
+
+/* Makefile */
+.language-makefile .token.symbol {
+  color: #795da3;
+}
+
+.language-makefile .token.variable {
+  color: #183691;
+}
+
+.language-makefile .token.builtin {
+  color: #0086b3;
+}
+
+/* Bash */
+.language-bash .token.keyword {
+  color: #0086b3;
+}
+
+/* highlight */
+pre[data-line] {
+  position: relative;
+  padding: 1em 0 1em 3em;
+}
+pre[data-line] .line-highlight-wrapper {
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-color: transparent;
+  display: block;
+  width: 100%;
+}
+
+pre[data-line] .line-highlight {
+  position: absolute;
+  left: 0;
+  right: 0;
+  padding: inherit 0;
+  margin-top: 1em;
+  background: hsla(24, 20%, 50%,.08);
+  background: linear-gradient(to right, hsla(24, 20%, 50%,.1) 70%, hsla(24, 20%, 50%,0));
+  pointer-events: none;
+  line-height: inherit;
+  white-space: pre;
+}
+
+pre[data-line] .line-highlight:before, 
+pre[data-line] .line-highlight[data-end]:after {
+  content: attr(data-start);
+  position: absolute;
+  top: .4em;
+  left: .6em;
+  min-width: 1em;
+  padding: 0 .5em;
+  background-color: hsla(24, 20%, 50%,.4);
+  color: hsl(24, 20%, 95%);
+  font: bold 65%/1.5 sans-serif;
+  text-align: center;
+  vertical-align: .3em;
+  border-radius: 999px;
+  text-shadow: none;
+  box-shadow: 0 1px white;
+}
+
+pre[data-line] .line-highlight[data-end]:after {
+  content: attr(data-end);
+  top: auto;
+  bottom: .4em;
+}html body{font-family:"Helvetica Neue",Helvetica,"Segoe UI",Arial,freesans,sans-serif;font-size:16px;line-height:1.6;color:#333;background-color:#fff;overflow:initial;box-sizing:border-box;word-wrap:break-word}html body>:first-child{margin-top:0}html body h1,html body h2,html body h3,html body h4,html body h5,html body h6{line-height:1.2;margin-top:1em;margin-bottom:16px;color:#000}html body h1{font-size:2.25em;font-weight:300;padding-bottom:.3em}html body h2{font-size:1.75em;font-weight:400;padding-bottom:.3em}html body h3{font-size:1.5em;font-weight:500}html body h4{font-size:1.25em;font-weight:600}html body h5{font-size:1.1em;font-weight:600}html body h6{font-size:1em;font-weight:600}html body h1,html body h2,html body h3,html body h4,html body h5{font-weight:600}html body h5{font-size:1em}html body h6{color:#5c5c5c}html body strong{color:#000}html body del{color:#5c5c5c}html body a:not([href]){color:inherit;text-decoration:none}html body a{color:#08c;text-decoration:none}html body a:hover{color:#00a3f5;text-decoration:none}html body img{max-width:100%}html body>p{margin-top:0;margin-bottom:16px;word-wrap:break-word}html body>ul,html body>ol{margin-bottom:16px}html body ul,html body ol{padding-left:2em}html body ul.no-list,html body ol.no-list{padding:0;list-style-type:none}html body ul ul,html body ul ol,html body ol ol,html body ol ul{margin-top:0;margin-bottom:0}html body li{margin-bottom:0}html body li.task-list-item{list-style:none}html body li>p{margin-top:0;margin-bottom:0}html body .task-list-item-checkbox{margin:0 .2em .25em -1.8em;vertical-align:middle}html body .task-list-item-checkbox:hover{cursor:pointer}html body blockquote{margin:16px 0;font-size:inherit;padding:0 15px;color:#5c5c5c;background-color:#f0f0f0;border-left:4px solid #d6d6d6}html body blockquote>:first-child{margin-top:0}html body blockquote>:last-child{margin-bottom:0}html body hr{height:4px;margin:32px 0;background-color:#d6d6d6;border:0 none}html body table{margin:10px 0 15px 0;border-collapse:collapse;border-spacing:0;display:block;width:100%;overflow:auto;word-break:normal;word-break:keep-all}html body table th{font-weight:bold;color:#000}html body table td,html body table th{border:1px solid #d6d6d6;padding:6px 13px}html body dl{padding:0}html body dl dt{padding:0;margin-top:16px;font-size:1em;font-style:italic;font-weight:bold}html body dl dd{padding:0 16px;margin-bottom:16px}html body code{font-family:Menlo,Monaco,Consolas,'Courier New',monospace;font-size:.85em !important;color:#000;background-color:#f0f0f0;border-radius:3px;padding:.2em 0}html body code::before,html body code::after{letter-spacing:-0.2em;content:"\00a0"}html body pre>code{padding:0;margin:0;font-size:.85em !important;word-break:normal;white-space:pre;background:transparent;border:0}html body .highlight{margin-bottom:16px}html body .highlight pre,html body pre{padding:1em;overflow:auto;font-size:.85em !important;line-height:1.45;border:#d6d6d6;border-radius:3px}html body .highlight pre{margin-bottom:0;word-break:normal}html body pre code,html body pre tt{display:inline;max-width:initial;padding:0;margin:0;overflow:initial;line-height:inherit;word-wrap:normal;background-color:transparent;border:0}html body pre code:before,html body pre tt:before,html body pre code:after,html body pre tt:after{content:normal}html body p,html body blockquote,html body ul,html body ol,html body dl,html body pre{margin-top:0;margin-bottom:16px}html body kbd{color:#000;border:1px solid #d6d6d6;border-bottom:2px solid #c7c7c7;padding:2px 4px;background-color:#f0f0f0;border-radius:3px}@media print{html body{background-color:#fff}html body h1,html body h2,html body h3,html body h4,html body h5,html body h6{color:#000;page-break-after:avoid}html body blockquote{color:#5c5c5c}html body pre{page-break-inside:avoid}html body table{display:table}html body img{display:block;max-width:100%;max-height:100%}html body pre,html body code{word-wrap:break-word;white-space:pre}}.markdown-preview{width:100%;height:100%;box-sizing:border-box}.markdown-preview .pagebreak,.markdown-preview .newpage{page-break-before:always}.markdown-preview pre.line-numbers{position:relative;padding-left:3.8em;counter-reset:linenumber}.markdown-preview pre.line-numbers>code{position:relative}.markdown-preview pre.line-numbers .line-numbers-rows{position:absolute;pointer-events:none;top:1em;font-size:100%;left:0;width:3em;letter-spacing:-1px;border-right:1px solid #999;-webkit-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none}.markdown-preview pre.line-numbers .line-numbers-rows>span{pointer-events:none;display:block;counter-increment:linenumber}.markdown-preview pre.line-numbers .line-numbers-rows>span:before{content:counter(linenumber);color:#999;display:block;padding-right:.8em;text-align:right}.markdown-preview .mathjax-exps .MathJax_Display{text-align:center !important}.markdown-preview:not([for="preview"]) .code-chunk .btn-group{display:none}.markdown-preview:not([for="preview"]) .code-chunk .status{display:none}.markdown-preview:not([for="preview"]) .code-chunk .output-div{margin-bottom:16px}.scrollbar-style::-webkit-scrollbar{width:8px}.scrollbar-style::-webkit-scrollbar-track{border-radius:10px;background-color:transparent}.scrollbar-style::-webkit-scrollbar-thumb{border-radius:5px;background-color:rgba(150,150,150,0.66);border:4px solid rgba(150,150,150,0.66);background-clip:content-box}html body[for="html-export"]:not([data-presentation-mode]){position:relative;width:100%;height:100%;top:0;left:0;margin:0;padding:0;overflow:auto}html body[for="html-export"]:not([data-presentation-mode]) .markdown-preview{position:relative;top:0}@media screen and (min-width:914px){html body[for="html-export"]:not([data-presentation-mode]) .markdown-preview{padding:2em calc(50% - 457px + 2em)}}@media screen and (max-width:914px){html body[for="html-export"]:not([data-presentation-mode]) .markdown-preview{padding:2em}}@media screen and (max-width:450px){html body[for="html-export"]:not([data-presentation-mode]) .markdown-preview{font-size:14px !important;padding:1em}}@media print{html body[for="html-export"]:not([data-presentation-mode]) #sidebar-toc-btn{display:none}}html body[for="html-export"]:not([data-presentation-mode]) #sidebar-toc-btn{position:fixed;bottom:8px;left:8px;font-size:28px;cursor:pointer;color:inherit;z-index:99;width:32px;text-align:center;opacity:.4}html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] #sidebar-toc-btn{opacity:1}html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc{position:fixed;top:0;left:0;width:300px;height:100%;padding:32px 0 48px 0;font-size:14px;box-shadow:0 0 4px rgba(150,150,150,0.33);box-sizing:border-box;overflow:auto;background-color:inherit}html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc::-webkit-scrollbar{width:8px}html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc::-webkit-scrollbar-track{border-radius:10px;background-color:transparent}html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc::-webkit-scrollbar-thumb{border-radius:5px;background-color:rgba(150,150,150,0.66);border:4px solid rgba(150,150,150,0.66);background-clip:content-box}html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc a{text-decoration:none}html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc ul{padding:0 1.6em;margin-top:.8em}html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc li{margin-bottom:.8em}html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc ul{list-style-type:none}html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .markdown-preview{left:300px;width:calc(100% -  300px);padding:2em calc(50% - 457px -  150px);margin:0;box-sizing:border-box}@media screen and (max-width:1274px){html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .markdown-preview{padding:2em}}@media screen and (max-width:450px){html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .markdown-preview{width:100%}}html body[for="html-export"]:not([data-presentation-mode]):not([html-show-sidebar-toc]) .markdown-preview{left:50%;transform:translateX(-50%)}html body[for="html-export"]:not([data-presentation-mode]):not([html-show-sidebar-toc]) .md-sidebar-toc{display:none}
+/* Please visit the URL below for more information: */
+/*   https://shd101wyy.github.io/markdown-preview-enhanced/#/customize-css */
+
+      </style>
+    </head>
+    <body for="html-export">
+      <div class="mume markdown-preview  ">
+      <h1 class="mume-header" id="genserver">Genserver</h1>
+
+<p>Keyuser documentation</p>
+<h2 class="mume-header undefined" id="contents">Contents</h2>
+
+<ul>
+<li><a href="#genserver">Genserver</a>
+<ul>
+<li><a href="#introduction">Introduction</a></li>
+</ul>
+</li>
+<li><a href="#client">Client</a></li>
+<li><a href="#server">Server</a>
+<ul>
+<li><a href="#configuration">Configuration</a></li>
+<li><a href="#websocket-api">Websocket API</a>
+<ul>
+<li><a href="#authorization">Authorization</a></li>
+<li><a href="#logging">Logging</a></li>
+<li><a href="#tasks">Tasks</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h2 class="mume-header" id="introduction">Introduction</h2>
+
+<p>Genserver is part of the larger Genrem toolsuite. It manages GenSimul runs on Linux and communicates with the Genrem Gui on Windows. It consists of a server (backend) and client (frontend) application.</p>
+<h1 class="mume-header" id="client">Client</h1>
+
+<p>The web client can be accessed using any browser connected to the NAM intranet. Simply navigate to <code>http://hostname:portHttp</code>. Here, <code>hostname</code> equals the hostname of the machine where the server is running and <code>portHttp</code> equals the http port specified in the server configuration.</p>
+<p>The production instance of Genserver at NAM can be found at:</p>
+<pre data-role="codeBlock" data-info="text" class="language-text"><code>http://amsdc2-n-sv0023:3001
+</code></pre><p>If the development instance of Genserver is running at NAM as well, it can be found at:</p>
+<pre data-role="codeBlock" data-info="text" class="language-text"><code>http://amsdc2-n-sv0023:3000
+</code></pre><h1 class="mume-header" id="server">Server</h1>
+
+<h2 class="mume-header" id="configuration">Configuration</h2>
+
+<p>The root directory of the server equals the directory where <code>main.js</code> is located. On startup, the server reads <code>./genserver.config.json</code>, i.e. this file should exist next to <code>main.js</code>. Its options (production defaults) are:</p>
+<pre data-role="codeBlock" data-info="javascript" class="language-javascript"><span class="token punctuation">{</span>
+    logging<span class="token punctuation">:</span> <span class="token punctuation">{</span>
+        console<span class="token punctuation">:</span> <span class="token punctuation">{</span>
+            minLogLevel<span class="token punctuation">:</span> <span class="token string">&apos;Warning&apos;</span>   <span class="token comment">// &apos;Info&apos;|&apos;Warning&apos;|&apos;Error&apos;</span>
+        <span class="token punctuation">}</span><span class="token punctuation">,</span>
+        file<span class="token punctuation">:</span> <span class="token punctuation">{</span>
+            enabled<span class="token punctuation">:</span> <span class="token boolean">true</span><span class="token punctuation">,</span>   <span class="token comment">// boolean  </span>
+            minLogLevel<span class="token punctuation">:</span> <span class="token string">&apos;Info&apos;</span><span class="token punctuation">,</span>   <span class="token comment">// &apos;Info&apos;|&apos;Warning&apos;|&apos;Error&apos;</span>
+            path<span class="token punctuation">:</span> <span class="token string">&apos;./logs/&apos;</span>   <span class="token comment">// string</span>
+        <span class="token punctuation">}</span>
+    <span class="token punctuation">}</span><span class="token punctuation">,</span>
+    server<span class="token punctuation">:</span> <span class="token punctuation">{</span>
+        portHttp<span class="token punctuation">:</span> <span class="token number">3001</span><span class="token punctuation">,</span>   <span class="token comment">// number</span>
+        portWs<span class="token punctuation">:</span> <span class="token number">8081</span><span class="token punctuation">,</span>   <span class="token comment">// number</span>
+        pathPublic<span class="token punctuation">:</span> <span class="token string">&apos;../../client/public/&apos;</span>   <span class="token comment">// string</span>
+    <span class="token punctuation">}</span><span class="token punctuation">,</span>
+    tasks<span class="token punctuation">:</span> <span class="token punctuation">{</span>
+        path<span class="token punctuation">:</span> <span class="token string">&apos;./tasks/&apos;</span><span class="token punctuation">,</span>   <span class="token comment">// string</span>
+        genperl<span class="token punctuation">:</span> <span class="token punctuation">{</span>
+            pathVersionsGensimul<span class="token punctuation">:</span> <span class="token string">&apos;/glb/eu/epe/data/genrem/genrem&apos;</span><span class="token punctuation">,</span>   <span class="token comment">// string</span>
+            pathVersionsGensimulDev<span class="token punctuation">:</span> <span class="token string">&apos;glb/eu/epe/data/genrem/genrem_d/&apos;</span><span class="token punctuation">,</span>   <span class="token comment">// string</span>
+            pathVersionsDynamo<span class="token punctuation">:</span> <span class="token string">&apos;/apps/sss/dynamo/&apos;</span><span class="token punctuation">,</span>   <span class="token comment">// string</span>
+            PathVersionsDynamoDev<span class="token punctuation">:</span> <span class="token string">&apos;/apps/sssdev/dynamo/&apos;</span><span class="token punctuation">,</span>   <span class="token comment">// string</span>
+        <span class="token punctuation">}</span><span class="token punctuation">,</span> 
+        deleteTaskAfterDays<span class="token punctuation">:</span> <span class="token number">14</span>   <span class="token comment">// number</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</pre><p>Remarks:</p>
+<ul>
+<li><code>server.portHttp</code><br>
+Defaults to 3001 in production and 3000 in development.</li>
+<li><code>server.portWs</code><br>
+Defaults to 8081 in production and 8080 in development. Changing this port means the client has to be rebuilt, so best leave it at default.</li>
+<li><code>tasks.deleteTaskAfterDays</code><br>
+Tasks that are created more than this number of days ago are automatically deleted by the server.</li>
+</ul>
+<h2 class="mume-header" id="websocket-api">Websocket API</h2>
+
+<p>The server uses the Websocket protocol to communicate with clients. The Websocket address is <code>ws://hostname:portWs</code>. Here, hostname equals the hostname of the machine where the server is running and <code>portWs</code> equals the Websocket port specified in the server configuration. For example:</p>
+<pre data-role="codeBlock" data-info="text" class="language-text"><code>ws://amsdc2-n-sv0023:8081
+</code></pre><p>The contents of the Websocket messages are JSON formatted strings. Dates stored as string follow ISO 8601 format in UTC, see also <a href="https://momentjs.com/docs/#/displaying/as-iso-string/">momentjs</a> docs. The server understands the following messages.</p>
+<h3 class="mume-header" id="authorization">Authorization</h3>
+
+<ul>
+<li><code>TokenRequest</code></li>
+</ul>
+<p>Client to server. Request a token for given client. Server responds with <code>TokenResponse</code>.</p>
+<pre data-role="codeBlock" data-info="javascript" class="language-javascript">    <span class="token punctuation">{</span>
+        type<span class="token punctuation">:</span> <span class="token string">&apos;TokenRequest&apos;</span><span class="token punctuation">,</span>
+        payload<span class="token punctuation">:</span> <span class="token punctuation">{</span>
+            clientId<span class="token punctuation">:</span> <span class="token string">&apos;User&apos;</span>   <span class="token comment">// string</span>
+        <span class="token punctuation">}</span>
+    <span class="token punctuation">}</span>
+</pre><ul>
+<li><code>TokenResponse</code></li>
+</ul>
+<p>Server to client. Response indicating whether authorization was successful and if so, a random token to be used in future messages.</p>
+<pre data-role="codeBlock" data-info="javascript" class="language-javascript">    <span class="token punctuation">{</span>
+        type<span class="token punctuation">:</span> <span class="token string">&apos;TokenResponse&apos;</span><span class="token punctuation">,</span>
+        payload<span class="token punctuation">:</span> <span class="token punctuation">{</span>
+            success<span class="token punctuation">:</span> <span class="token boolean">true</span><span class="token punctuation">,</span>   <span class="token comment">// boolean</span>
+            token<span class="token punctuation">:</span> <span class="token string">&apos;d3719f66538611e89c2dfa7ae01bbebc&apos;</span><span class="token punctuation">,</span>   <span class="token comment">// string</span>
+        <span class="token punctuation">}</span>
+    <span class="token punctuation">}</span>
+</pre><h3 class="mume-header" id="logging">Logging</h3>
+
+<ul>
+<li><code>ServerLog</code></li>
+</ul>
+<p>Server to client. Contains a log message from server.</p>
+<pre data-role="codeBlock" data-info="javascript" class="language-javascript">    <span class="token punctuation">{</span>
+        type<span class="token punctuation">:</span> <span class="token string">&apos;ServerLog&apos;</span><span class="token punctuation">,</span>
+        payload<span class="token punctuation">:</span> <span class="token punctuation">{</span>
+            type<span class="token punctuation">:</span> <span class="token string">&apos;Info&apos;</span><span class="token punctuation">,</span>   <span class="token comment">// &apos;Info&apos;|&apos;Warning&apos;|&apos;Error&apos;</span>
+            date<span class="token punctuation">:</span> <span class="token string">&apos;2018-02-04T22:44:30.652Z&apos;</span><span class="token punctuation">,</span>   <span class="token comment">// datestring</span>
+            text<span class="token punctuation">:</span> <span class="token string">&apos;Action completed successfully.&apos;</span>   <span class="token comment">// string</span>
+        <span class="token punctuation">}</span>
+    <span class="token punctuation">}</span>
+</pre><h3 class="mume-header" id="tasks">Tasks</h3>
+
+<ul>
+<li>
+<p><code>TaskInfoRequest</code></p>
+<p>Client to server. Request information about one or more tasks. Server responds with <code>TaskInfoResponse</code>.</p>
+</li>
+</ul>
+<pre data-role="codeBlock" data-info="javascript" class="language-javascript">    <span class="token punctuation">{</span>
+        type<span class="token punctuation">:</span> <span class="token string">&apos;TaskInfoRequest&apos;</span><span class="token punctuation">,</span>
+        payload<span class="token punctuation">:</span> <span class="token punctuation">{</span>
+            token<span class="token punctuation">:</span> <span class="token string">&apos;d3719f66538611e89c2dfa7ae01bbebc&apos;</span><span class="token punctuation">,</span>   <span class="token comment">// string</span>
+            taskIds<span class="token punctuation">:</span> <span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token punctuation">,</span>   <span class="token comment">// string[]</span>
+            includeLogs<span class="token punctuation">:</span> <span class="token boolean">false</span><span class="token punctuation">,</span>   <span class="token comment">// boolean</span>
+            logStartDate<span class="token punctuation">:</span> <span class="token string">&apos;&apos;</span><span class="token punctuation">,</span>   <span class="token comment">// datestring</span>
+            includeInput<span class="token punctuation">:</span> <span class="token boolean">false</span><span class="token punctuation">,</span>   <span class="token comment">// boolean</span>
+            includeOutput<span class="token punctuation">:</span> <span class="token boolean">false</span>   <span class="token comment">// boolean</span>
+        <span class="token punctuation">}</span>
+    <span class="token punctuation">}</span>
+</pre><p>Remarks:</p>
+<ul>
+<li>
+<p><code>taskIds</code> If empty, response includes info on all tasks available to client. If non-empty, response contains info specific to those tasks.</p>
+</li>
+<li>
+<p><code>includeLogs</code> If true, response includes task log messages.</p>
+</li>
+<li>
+<p><code>includeInput</code> If true, response includes task input.</p>
+</li>
+<li>
+<p><code>includeOutput</code> If true, response includes task output.</p>
+</li>
+<li>
+<p><code>logStartDate</code> If non-empty, response does not include task log messages from before this date.</p>
+</li>
+<li>
+<p><code>TaskInfoResponse</code></p>
+</li>
+</ul>
+<p>Server to client. Contains info about specific tasks.</p>
+<pre data-role="codeBlock" data-info="javascript" class="language-javascript">    <span class="token punctuation">{</span>
+        type<span class="token punctuation">:</span> <span class="token string">&apos;TaskInfoResponse&apos;</span><span class="token punctuation">,</span>
+        payload<span class="token punctuation">:</span> <span class="token punctuation">{</span>
+            infoItems<span class="token punctuation">:</span> <span class="token punctuation">[</span>
+                <span class="token punctuation">{</span>
+                    type<span class="token punctuation">:</span> <span class="token string">&apos;Genperl&apos;</span><span class="token punctuation">,</span>   <span class="token comment">// &apos;Genperl&apos;|&apos;FolderWatch&apos;</span>
+                    status<span class="token punctuation">:</span> <span class="token string">&apos;Running&apos;</span><span class="token punctuation">,</span>   <span class="token comment">// TaskStatus, see remarks below.</span>
+                    id<span class="token punctuation">:</span> <span class="token string">&apos;20180204224430652&apos;</span><span class="token punctuation">,</span>   <span class="token comment">// string </span>
+                    ownerClientId<span class="token punctuation">:</span> <span class="token string">&apos;User&apos;</span><span class="token punctuation">,</span>   <span class="token comment">// string</span>
+                    dateCreated<span class="token punctuation">:</span> <span class="token string">&apos;2018-02-04T22:44:30.652Z&apos;</span><span class="token punctuation">,</span>   <span class="token comment">// datestring</span>
+                    description<span class="token punctuation">:</span> <span class="token string">&apos;Genperl task for testing purposes.&apos;</span><span class="token punctuation">,</span>   <span class="token comment">// string</span>
+                    logs<span class="token punctuation">:</span> <span class="token punctuation">[</span><span class="token punctuation">{</span>
+                            type<span class="token punctuation">:</span> <span class="token string">&apos;Info&apos;</span><span class="token punctuation">,</span>   <span class="token comment">// &apos;Info&apos;|&apos;Warning&apos;|&apos;Error&apos;</span>
+                            date<span class="token punctuation">:</span> <span class="token string">&apos;2018-02-04T22:44:30.652Z&apos;</span><span class="token punctuation">,</span>   <span class="token comment">// datestring</span>
+                            text<span class="token punctuation">:</span> <span class="token string">&apos;Action completed successfully.&apos;</span>   <span class="token comment">// string</span>
+                        <span class="token punctuation">}</span><span class="token punctuation">]</span><span class="token punctuation">,</span> 
+                    input<span class="token punctuation">:</span> <span class="token punctuation">{</span><span class="token operator">...</span><span class="token punctuation">}</span>   <span class="token comment">// TaskInput, see remarks</span>
+                    output<span class="token punctuation">:</span> <span class="token punctuation">{</span><span class="token operator">...</span><span class="token punctuation">}</span>   <span class="token comment">// TaskOutput, see remarks</span>
+                <span class="token punctuation">}</span>
+            <span class="token punctuation">]</span>
+        <span class="token punctuation">}</span>
+    <span class="token punctuation">}</span>
+</pre><p>Remarks:</p>
+<ul>
+<li>
+<p>The options for <code>status</code> are Concept, PendingStart, Running, PendingStop, Success, Error, PendingDelete.</p>
+</li>
+<li>
+<p>The fields <code>logs</code>, <code>input</code> and <code>output</code> are optional. See also <code>TaskInfoRequest</code> message.</p>
+</li>
+<li>
+<p>For each entry in <code>infoItems</code>, the structure of <code>input</code> and <code>output</code> depends on <code>type</code>. See also <code>TaskCreateNew</code> message.</p>
+</li>
+<li>
+<p><code>TaskInfoSubscribe</code></p>
+</li>
+</ul>
+<p>Client to server. Request server to keep client informed of task info updates.</p>
+<pre data-role="codeBlock" data-info="javascript" class="language-javascript">    <span class="token punctuation">{</span>
+        type<span class="token punctuation">:</span> <span class="token string">&apos;TaskInfoSubscribe&apos;</span><span class="token punctuation">,</span>
+        payload<span class="token punctuation">:</span> <span class="token punctuation">{</span>
+            token<span class="token punctuation">:</span> <span class="token string">&apos;d3719f66538611e89c2dfa7ae01bbebc&apos;</span><span class="token punctuation">,</span>   <span class="token comment">// string</span>
+            defaultType<span class="token punctuation">:</span> <span class="token string">&apos;Summary&apos;</span><span class="token punctuation">,</span>   <span class="token comment">// &apos;None&apos;|&apos;Summary&apos;|&apos;Detail&apos;</span>
+            overloads<span class="token punctuation">:</span> <span class="token punctuation">[</span>
+                <span class="token punctuation">{</span>
+                    taskId<span class="token punctuation">:</span> <span class="token string">&apos;20180204224430652&apos;</span><span class="token punctuation">,</span>   <span class="token comment">// string </span>
+                    type<span class="token punctuation">:</span> <span class="token string">&apos;Detail&apos;</span>   <span class="token comment">// &apos;None&apos;|&apos;Summary&apos;|&apos;Detail&apos;</span>
+                <span class="token punctuation">}</span>
+            <span class="token punctuation">]</span>
+        <span class="token punctuation">}</span>
+    <span class="token punctuation">}</span>
+</pre><p>Remarks:</p>
+<ul>
+<li>
+<p>With a subscription of type <code>Summary</code>, the server sends a message on task status updates. With a <code>Detail</code> subscription, the server sends all  task log message updates in real-time. Please be careful with this option. None` can be used to cancel a subscription.</p>
+</li>
+<li>
+<p><code>defaultType</code> This subscription type is applied to all current and future tasks available to client. It overrides previous subscriptions.</p>
+</li>
+<li>
+<p><code>overloads</code> If non-empty, allows to override the default type for specific task ids. This is useful for limiting <code>Detail</code> updates to some relevant tasks.</p>
+</li>
+<li>
+<p><code>TaskCreateNew</code></p>
+</li>
+</ul>
+<p>Client to server. Request the server to start a new task or ask server to describe options for starting new tasks.</p>
+<pre data-role="codeBlock" data-info="javascript" class="language-javascript">    <span class="token punctuation">{</span>
+        type<span class="token punctuation">:</span> <span class="token string">&apos;TaskCreateNew&apos;</span><span class="token punctuation">,</span>
+        payload<span class="token punctuation">:</span> <span class="token punctuation">{</span>
+            token<span class="token punctuation">:</span> <span class="token string">&apos;d3719f66538611e89c2dfa7ae01bbebc&apos;</span><span class="token punctuation">,</span>   <span class="token comment">// string</span>
+            type<span class="token punctuation">:</span> <span class="token string">&apos;Genperl&apos;</span><span class="token punctuation">,</span>   <span class="token comment">// &apos;Genperl&apos;|&apos;FolderWatch&apos;</span>
+            input<span class="token punctuation">:</span> <span class="token punctuation">{</span><span class="token operator">...</span><span class="token punctuation">}</span>   <span class="token comment">// TaskInput, see remarks</span>
+        <span class="token punctuation">}</span>
+    <span class="token punctuation">}</span>
+</pre><p>Remarks:</p>
+<ul>
+<li>
+<p><code>type</code> If empty, server responds with <code>TaskTypeOptionsResponse</code>, describing the options for starting new tasks. If non-empty, server responds with <code>TaskInfoResponse</code> and <code>input</code> should match as follows.</p>
+</li>
+<li>
+<p><code>input</code> structure for <code>type</code> Genperl:</p>
+</li>
+</ul>
+<pre data-role="codeBlock" data-info="javascript" class="language-javascript">    <span class="token punctuation">{</span>
+        description<span class="token punctuation">:</span> <span class="token string">&apos;Genperl task for testing purposes.&apos;</span><span class="token punctuation">,</span>   <span class="token comment">// string</span>
+        pathGendsc<span class="token punctuation">:</span> <span class="token string">&apos;//folder/file.gendsc&apos;</span><span class="token punctuation">,</span>   <span class="token comment">// string</span>
+        runLocal<span class="token punctuation">:</span> <span class="token boolean">false</span><span class="token punctuation">,</span>   <span class="token comment">// boolean</span>
+        useDynamo<span class="token punctuation">:</span> <span class="token boolean">false</span><span class="token punctuation">,</span>   <span class="token comment">// boolean</span>
+        useGensimulDev<span class="token punctuation">:</span> <span class="token boolean">false</span><span class="token punctuation">,</span>   <span class="token comment">// boolean</span>
+        useDynamoDev<span class="token punctuation">:</span> <span class="token boolean">false</span><span class="token punctuation">,</span>   <span class="token comment">// boolean</span>
+        gensimulVersion<span class="token punctuation">:</span> <span class="token string">&apos;Default&apos;</span><span class="token punctuation">,</span>   <span class="token comment">// string</span>
+        dynamoVersion<span class="token punctuation">:</span> <span class="token string">&apos;Default&apos;</span>   <span class="token comment">// string</span>
+    <span class="token punctuation">}</span>
+</pre><ul>
+<li><code>input</code> structure for <code>type</code> FolderWatch:</li>
+</ul>
+<pre data-role="codeBlock" data-info="javascript" class="language-javascript">    <span class="token punctuation">{</span>
+        description<span class="token punctuation">:</span> <span class="token string">&apos;Task to trigger Genperl tasks based on file detection.&apos;</span><span class="token punctuation">,</span>   <span class="token comment">// string</span>
+        watchPath<span class="token punctuation">:</span> <span class="token string">&apos;//folder/subfolder/&apos;</span><span class="token punctuation">,</span>   <span class="token comment">// string</span>
+        fileHandler<span class="token punctuation">:</span> <span class="token string">&apos;GenperlStartfileHandler&apos;</span><span class="token punctuation">,</span>   <span class="token comment">// &apos;GenperlStartfileHandler&apos;</span>
+    <span class="token punctuation">}</span>
+</pre><ul>
+<li>
+<p>This is the same input as required when starting a new task via the web client, so see the web client for more information.</p>
+</li>
+<li>
+<p><code>TaskTypeOptionsResponse</code></p>
+</li>
+</ul>
+<p>Server to client. Describes options available to client for starting new tasks, for example possible Gensimul versions.</p>
+<pre data-role="codeBlock" data-info="javascript" class="language-javascript">    <span class="token punctuation">{</span>
+        type<span class="token punctuation">:</span> <span class="token string">&apos;TaskTypeOptionsResponse&apos;</span><span class="token punctuation">,</span>
+        payload<span class="token punctuation">:</span> <span class="token punctuation">{</span>
+            taskOptions<span class="token punctuation">:</span> <span class="token punctuation">[</span>
+                <span class="token punctuation">{</span>
+                    type<span class="token punctuation">:</span> <span class="token string">&apos;Genperl&apos;</span>   <span class="token comment">// &apos;Genperl&apos;|&apos;FolderWatch&apos; </span>
+                    options<span class="token punctuation">:</span> <span class="token punctuation">{</span><span class="token operator">...</span><span class="token punctuation">}</span>   <span class="token comment">// TaskTypeOptions, see remarks</span>
+                <span class="token punctuation">}</span>
+            <span class="token punctuation">]</span>
+        <span class="token punctuation">}</span>
+    <span class="token punctuation">}</span>
+</pre><p>Remarks:</p>
+<ul>
+<li>
+<p><code>taskOptions</code> has an entry for each task that can be started by client. For each entry, <code>options</code> depends on <code>type</code> as follows.</p>
+</li>
+<li>
+<p><code>options</code> structure for <code>type</code> Genperl:</p>
+</li>
+</ul>
+<pre data-role="codeBlock" data-info="javascript" class="language-javascript">    <span class="token punctuation">{</span>
+        gensimulVersions<span class="token punctuation">:</span> <span class="token punctuation">[</span><span class="token string">&apos;Default&apos;</span><span class="token punctuation">,</span> <span class="token string">&apos;v2018.1.0.0&apos;</span><span class="token punctuation">]</span><span class="token punctuation">,</span>   <span class="token comment">// string[]</span>
+        gensimulVersionsDev<span class="token punctuation">:</span> <span class="token punctuation">[</span><span class="token string">&apos;Default&apos;</span><span class="token punctuation">,</span> <span class="token string">&apos;v2018.1.0.0&apos;</span><span class="token punctuation">,</span> <span class="token string">&apos;v2018.2.0.0&apos;</span><span class="token punctuation">]</span><span class="token punctuation">,</span>   <span class="token comment">// string[]</span>
+        dynamoVersions<span class="token punctuation">:</span> <span class="token punctuation">[</span><span class="token string">&apos;Default&apos;</span><span class="token punctuation">,</span> <span class="token string">&apos;v2017.1.0&apos;</span><span class="token punctuation">]</span><span class="token punctuation">,</span>   <span class="token comment">// string[]</span>
+        dynamoVersionsDev<span class="token punctuation">:</span> <span class="token punctuation">[</span><span class="token string">&apos;Default&apos;</span><span class="token punctuation">,</span> <span class="token string">&apos;v2017.1.0&apos;</span><span class="token punctuation">,</span> <span class="token string">&apos;v2018.1.0&apos;</span><span class="token punctuation">]</span>   <span class="token comment">// string[]</span>
+    <span class="token punctuation">}</span>
+</pre><ul>
+<li><code>options</code> structure for <code>type</code> FolderWatch:</li>
+</ul>
+<pre data-role="codeBlock" data-info="javascript" class="language-javascript">    <span class="token punctuation">{</span>
+        fileHandlers<span class="token punctuation">:</span> <span class="token punctuation">[</span><span class="token string">&apos;GenperlStartfileHandler&apos;</span><span class="token punctuation">]</span>   <span class="token comment">// string[]</span>
+    <span class="token punctuation">}</span>
+</pre><ul>
+<li><code>TaskControl</code></li>
+</ul>
+<p>Client to server. Request the server to stop or delete a specific task. Server responds with <code>TaskInfoResponse</code>.</p>
+<pre data-role="codeBlock" data-info="javascript" class="language-javascript">    <span class="token punctuation">{</span>
+        type<span class="token punctuation">:</span> <span class="token string">&apos;TaskControl&apos;</span><span class="token punctuation">,</span>
+        payload<span class="token punctuation">:</span> <span class="token punctuation">{</span>
+            token<span class="token punctuation">:</span> <span class="token string">&apos;d3719f66538611e89c2dfa7ae01bbebc&apos;</span><span class="token punctuation">,</span>   <span class="token comment">// string</span>
+            taskId<span class="token punctuation">:</span> <span class="token string">&apos;20180204224430652&apos;</span><span class="token punctuation">,</span>   <span class="token comment">// string</span>
+            action<span class="token punctuation">:</span> <span class="token string">&apos;stop&apos;</span>   <span class="token comment">// &apos;stop&apos;|&apos;delete&apos;</span>
+        <span class="token punctuation">}</span>
+    <span class="token punctuation">}</span>
+</pre>
+      </div>
+      
+      
+    
+    
+    
+    
+    
+    
+    
+    
+  
+    </body></html>
