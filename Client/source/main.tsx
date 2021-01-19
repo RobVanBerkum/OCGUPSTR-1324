@@ -1,4 +1,4 @@
-import 'core-js/shim'   // Polyfill for IE support.
+import 'core-js'   // Polyfill for IE support.
 import * as React from 'react'
 import * as ReactDOM from 'react-dom'
 import { HashRouter, Route, Switch } from 'react-router-dom'

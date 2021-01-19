@@ -57,12 +57,12 @@ const configWebpackServerDev = {
  */
 const configWebpackServerProd = {...configWebpackServerDev, ...{
     mode: 'production',
-    devtool: 'none',
+    devtool: false,
     output: {
         path: configGulp.pathProduction,
         filename: 'main.js'
     }
-}};
+} };
 
 /**
  * Webpack configuration for client in development. 
@@ -100,7 +100,7 @@ const configWebpackClientDev = {
  */
 const configWebpackClientProd = {...configWebpackClientDev, ...{
     mode: 'production',
-    devtool: 'none',
+    devtool: false,
     output: {
         path: path.join(configGulp.pathProduction, '/client/public'),
         filename: 'main.js'

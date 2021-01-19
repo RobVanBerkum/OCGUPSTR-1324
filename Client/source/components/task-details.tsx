@@ -498,7 +498,7 @@ class TaskDetails extends React.Component<TaskDetailsProps, TaskDetailsState> {
 	/** Scroll to bottom after component update. */
 	componentDidUpdate() {
 		if (this.state.followLog) {
-			window.scrollTo({top: document.body.scrollHeight, behavior: 'instant'})
+			window.scrollTo({top: document.body.scrollHeight, behavior: 'auto'})
 		}
 	}
 

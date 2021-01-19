@@ -32,7 +32,7 @@ export class Communicator {
 			return this.ws
 		} else {
 			let ws = new WebSocket(this.wsUrl)
-			let waitForOpen = new Promise((resolve, reject) => {
+			let waitForOpen = new Promise<void>((resolve, reject) => {
 				let timer = setTimeout(() => reject('WebSocket open timeout.'), 3000)
 				ws.onopen = () => {
 					clearTimeout(timer)

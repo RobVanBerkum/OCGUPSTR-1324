@@ -1,7 +1,8 @@
 import * as React from 'react'
 import * as moment from 'moment'
 import { Grid, Message } from 'semantic-ui-react'
-import { connect, Dispatch } from 'react-redux'
+import { connect } from 'react-redux'
+import { Dispatch } from 'redux';
 import { RootState, ConnectionStatus } from './../redux/state'
 import { LogItem } from './../messaging/messages'
 
